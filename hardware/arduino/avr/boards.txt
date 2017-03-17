@@ -1,6 +1,7 @@
 # See: http://code.google.com/p/arduino/wiki/Platforms
 
 menu.cpu=Processor
+menu.edition=Edition
 
 ##############################################################
 
@@ -1044,10 +1045,23 @@ unowifi.bootloader.unlock_bits=0x3F
 unowifi.bootloader.lock_bits=0x0F
 unowifi.bootloader.file=optiboot/optiboot_atmega328.hex
 
-unowifi.build.mcu=atmega328p
-unowifi.build.f_cpu=16000000L
-unowifi.build.board=AVR_UNO_WIFI
-unowifi.build.core=arduino
-unowifi.build.variant=standard
-unowifi.build.esp_ch_uart_br=19200
-unowifi.build.extra_flags=-DESP_CH_UART -DESP_CH_UART_BR={build.esp_ch_uart_br}
+## Uno WiFi Standard Edition
+## --------------------------------------------------
+unowifi.menu.edition.standard=Standard
+unowifi.menu.edition.standard.build.mcu=atmega328p
+unowifi.menu.edition.standard.build.f_cpu=16000000L
+unowifi.menu.edition.standard.build.board=AVR_UNO_WIFI
+unowifi.menu.edition.standard.build.core=arduino
+unowifi.menu.edition.standard.build.variant=standard
+unowifi.menu.edition.standard.build.extra_flags=-DESP_CH_SPI
+
+## Uno WiFi Developer Edition
+## --------------------------------------------------
+unowifi.menu.edition.developer=Developer
+unowifi.menu.edition.developer.build.mcu=atmega328p
+unowifi.menu.edition.developer.build.f_cpu=16000000L
+unowifi.menu.edition.developer.build.board=AVR_UNO_WIFI_DEV_ED
+unowifi.menu.edition.developer.build.core=arduino
+unowifi.menu.edition.developer.build.variant=standard
+unowifi.menu.edition.developer.build.esp_ch_uart_br=19200
+unowifi.menu.edition.developer.build.extra_flags=-DESP_CH_UART -DESP_CH_UART_BR={build.esp_ch_uart_br}
